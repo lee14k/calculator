@@ -1,3 +1,4 @@
+const calculator = document.querySelector('.calculator')
 let numbers = document.getElementsByClassName("number")
 let addition
 let subtraction
@@ -6,7 +7,8 @@ let division
 
 let operations = document.getElementsByClassName("operation")
 
-let firstNumber = "0"
+let firstNumber
+let first = []
 let secondNumber
 let currentOperation
 let result
@@ -23,10 +25,11 @@ arr.forEach(numbers => numbers.addEventListener('click', (e) => {
     firstNumber = e.target.value
 
     // let tea = firstNumberDisplay.append(firstNumber)
-    console.log(firstNumber + firstNumberDisplay.append(firstNumber))
+    first.push(firstNumber)
+    console.log(first)
 
-    let tea = firstNumberDisplay.textContent
-    console.log(tea)
+    //let firstNumberValue = firstNumberDisplay.textContent
+    //console.log(firstNumberValue)
     //tea = 
     //console.log(tea)
     //secondNumber = e.target.value
@@ -34,14 +37,22 @@ arr.forEach(numbers => numbers.addEventListener('click', (e) => {
     //firstNumber.appendNumber(firstNumber.innerText)
 }))
 
-/*} else {
-    arr.forEach(numbers => numbers.addEventListener('click', (e) => {
-        secondNumber = e.target.value
-        firstNumberDisplay.textContent = firstNumber + secondNumber
+let operator = Array.from(operations);
 
-        console.log(firstNumber)
-        console.log(secondNumber)
-    }))
 
-}
-console.log(firstNumberDisplay)*/
+operator.forEach(operations => operations.addEventListener('click', (e) => {
+
+    currentOperation = e.target.value
+    if (currentOperation === "+") {
+        console.log("add")
+    } else if (currentOperation === "-") {
+        console.log('subtract')
+    } else if (currentOperation === '*') {
+        console.log('multiply')
+    } else if (currentOperation === '/') {
+        console.log('divide')
+    }
+
+}))
+
+
